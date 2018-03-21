@@ -1,5 +1,7 @@
-const webpack = require('webpack');
-const path    = require('path');
+const webpack      = require('webpack');
+const path         = require('path');
+const INPRODUCTION = process.env.NODE_ENV === 'production'
+
 
 
 module.exports = {
@@ -34,6 +36,13 @@ module.exports = {
 
             }
           ] // rules
-    } // module
+    }, // module
+
+    plugins:  []
 };
 
+// If process environment and if we have any reference to NODE_ENV 
+// Only run uglify in the producion
+if ( INPRODUCTION ) {
+    module.exports.plugins.push( new webpack.optimize.UglifyJsPlugin);
+}
