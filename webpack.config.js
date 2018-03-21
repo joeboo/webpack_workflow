@@ -17,9 +17,21 @@ module.exports = {
     module: {
         rules: [
             { 
+                // file type
                 test: /\.js$/, 
-                exclude: /node_modules/, 
+                exclude: /node_modules/,
+                // which loader you want to use 
                 loader: "babel-loader" 
+            },
+
+            {
+                // file type
+                test: /\.css$/,
+                // which loader you want to use
+                // style-loader - this will take any css from the css webpack build and inject it into a page
+                // Note: with this array arg, this will take effect from right to left
+                use: [ 'style-loader','css-loader' ]
+
             }
           ] // rules
     } // module
