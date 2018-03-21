@@ -1,5 +1,9 @@
 The following will guide you on how to install/using webpack within your project:
 
+loader allows you to load any file format that you wish.
+e.g main.js
+require('./style.scss')
+
 Note: if you use webpack 4 and above you need to config to production mode
 https://www.valentinog.com/blog/webpack-4-tutorial/
 Command lines:

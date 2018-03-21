@@ -19,6 +19,7 @@ module.exports = {
     module: {
         rules: [
             { 
+                // Javascript ES5/6
                 // file type
                 test: /\.js$/, 
                 exclude: /node_modules/,
@@ -27,6 +28,7 @@ module.exports = {
             },
 
             {
+                // css
                 // file type
                 test: /\.css$/,
                 // which loader you want to use
@@ -34,7 +36,15 @@ module.exports = {
                 // Note: with this array arg, this will take effect from right to left
                 use: [ 'style-loader','css-loader' ]
 
+            },
+
+            // SASS
+            {
+                test: /\.s[ac]ss$/,
+                use: [ 'style-loader','css-loader','sass-loader' ]     
             }
+
+
           ] // rules
     }, // module
 
