@@ -79,9 +79,13 @@ Command lines:
 
 7. Dev Server
    https://webpack.js.org/configuration/dev-server/
+
    7.1.0. Install webpack-dev-server
           npm install webpack-dev-server --save-dev
-          "dev": "webpack-dev-server"
+          "dev": "webpack-dev-server" when running on this mode you will not be able to see the compiled files in disc directory, but you still accessing the files.
+                        AND 
+          "dev": "webpack --mode development"  when running on this mode you will be the compiled files in disc directory.
+
 
 
 

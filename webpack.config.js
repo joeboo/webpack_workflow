@@ -28,6 +28,7 @@ const Inproduction = (process.env.NODE_ENV === 'production');
 //   plugins: [new HtmlWebpackPlugin()]
 // };
 
+
 module.exports = {
     // In entry you can either refence a string or object
     entry: {
@@ -96,6 +97,14 @@ module.exports = {
 
           ] // rules
     }, // module
+
+    devServer: {
+        contentBase: path.join(__dirname, "dist"),
+        compress: true, // this will enable gzip compression for eveything served.
+        port: 9000,
+        stats: "errors-only",
+        open: true
+    },
 
     plugins: [
         new ExtractTextPlugin("[name].[chunkhash].css"),
