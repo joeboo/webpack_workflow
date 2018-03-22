@@ -1,4 +1,4 @@
-require('./css/style.scss');
+// require('./css/style.scss');
 let mmessage = require('./script2');
 let name = 'joe';
 console.log(name);

@@ -12,7 +12,8 @@ Command lines:
   - npm production
 
 1. Install webpack
-   npm install --save-dev webpack
+   npm install --save-dev webpack (Currently using V.4.2.0)
+
 
 2. Install babel
    npm install --save-dev babel-loader babel-core
@@ -35,12 +36,25 @@ Command lines:
  	4.1 SASS Loader
   		npm install node-sass sass-loader --save-dev
 
-5. Minification and Environments
-  
+  4.2 Extract CSS to a Dedicated File
+   4.2.1 Require the plugin
+         - const ExtractTextPlugin = require("extract-text-webpack-plugin");
+   4.2.2 Reference the plugin
+         - extractSass
+   4.2.3 Test any file and extract them
+         -  see more infor here: https://github.com/webpack-contrib/sass-loader
+
+    Note: Usually, it's recommended to extract the style sheets into a dedicated file in production using the ExtractTextPlugin. This way your styles are not dependent on JavaScript
+
+    Follow this link for an intruction: https://github.com/webpack-contrib/sass-loader
+
+5. Minification and Environments  
   5.1 
     plugin:  [
-        new webpack.optimize.UglifyJsPlugin()
+            new UglifyJsPlugin()
     ]
+ Note: 
+ https://github.com/webpack-contrib/uglifyjs-webpack-plugin
 
 5.2
 // If process environment and if we have any reference to NODE_ENV 
