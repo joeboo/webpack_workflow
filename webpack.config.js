@@ -102,7 +102,17 @@ module.exports = {
         new webpack.LoaderOptionsPlugin({
           minimize: Inproduction,
         }),
-        new HtmlWebpackPlugin()
+
+        new HtmlWebpackPlugin({
+            // Writing Your Own Templates
+                title: 'Custom template TEST',
+                template: path.resolve(__dirname, 'index.html'),// Load a custom template (lodash by default see the FAQ for details)
+                inject: true,
+                minify: {
+                    collapseWhitespace: true
+                }
+             
+        })
     ]
 };
 

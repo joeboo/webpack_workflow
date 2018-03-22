@@ -66,11 +66,16 @@ Command lines:
 6. HTML Plugin
     This plugin generate an HTML file for you.
     https://webpack.js.org/plugins/html-webpack-plugin/
+    https://github.com/jantimon/html-webpack-plugin#configuration
 
   6.1.1 Installl HtmlWebpackPlugin
         npm install --save-dev html-webpack-plugin
   6.1.2 Require the package
         const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+  Note:
+  By including this snippet below will allow you to inject a custom title into your output file.
+  <%= htmlWebpackPlugin.options.title %>
 
 
 
