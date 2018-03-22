@@ -77,5 +77,13 @@ Command lines:
   By including this snippet below will allow you to inject a custom title into your output file.
   <%= htmlWebpackPlugin.options.title %>
 
+7. Dev Server
+   https://webpack.js.org/configuration/dev-server/
+   7.1.0. Install webpack-dev-server
+          npm install webpack-dev-server --save-dev
+          "dev": "webpack-dev-server"
+
+
+
 
 

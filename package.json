@@ -4,7 +4,7 @@
   "description": "The following will guide you on how to install/using webpack within your project:",
   "main": "script1.js",
   "scripts": {
-    "dev": "webpack --mode development",
+    "dev": "webpack-dev-server",
     "production": "NODE_ENV=production webpack",
     "watch": "npm run build -- --watch"
   },
@@ -22,7 +22,8 @@
     "optimize-css-assets-webpack-plugin": "^4.0.0",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
-    "uglifyjs-webpack-plugin": "^1.2.4"
+    "uglifyjs-webpack-plugin": "^1.2.4",
+    "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
     "jquery": "^3.3.1",
