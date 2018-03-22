@@ -29,6 +29,8 @@ module.exports = {
             './src/script1.js',
             './src/css/style.scss'
         ],
+        // main:'./src/script1.js',
+        // vendor:['jquery']
     },
 
     // Define output point
@@ -37,7 +39,9 @@ module.exports = {
          // 'dist' folder will be created automatically when you run webpack
         path: path.resolve(__dirname, 'dist'),
         // '[name] is defined above in entry object
-        filename: '[name].[hash]js'
+        // [chuckhash] - this will corespond to current chunk
+        // in this case would be main or vendor
+        filename: '[name].[chunkhash].js'
     },
 
     module: {
@@ -83,9 +87,7 @@ module.exports = {
     }, // module
 
     plugins: [
-
-        new ExtractTextPlugin("[name].[hash]css"),
-
+        new ExtractTextPlugin("[name].[chunkhash].css"),
         new webpack.LoaderOptionsPlugin({
           minimize: Inproduction,
         })
