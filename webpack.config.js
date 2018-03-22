@@ -2,6 +2,8 @@ const webpack           = require('webpack');
 const path              = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const Inproduction = (process.env.NODE_ENV === 'production');
 
 // const extractSass = new ExtractTextPlugin({
@@ -17,6 +19,14 @@ const Inproduction = (process.env.NODE_ENV === 'production');
 //   }
 // })
 
+// var webpackConfig = {
+//   entry: 'index.js',
+//   output: {
+//     path: path.resolve(__dirname, './dist'),
+//     filename: 'index_bundle.js'
+//   },
+//   plugins: [new HtmlWebpackPlugin()]
+// };
 
 module.exports = {
     // In entry you can either refence a string or object
@@ -68,7 +78,8 @@ module.exports = {
             // SASS
             {
                 test: /\.s[ac]ss$/,
-                // use: [ 'style-loader','css-loader','sass-loader' ]     
+                // use: [ 'style-loader','css-loader','sass-loader' ]    
+                // Code spliting to extracting css 
                 use: ExtractTextPlugin.extract({
                     use: ["css-loader","sass-loader"],
                         // {
@@ -90,7 +101,8 @@ module.exports = {
         new ExtractTextPlugin("[name].[chunkhash].css"),
         new webpack.LoaderOptionsPlugin({
           minimize: Inproduction,
-        })
+        }),
+        new HtmlWebpackPlugin()
     ]
 };
 

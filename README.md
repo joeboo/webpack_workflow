@@ -56,9 +56,21 @@ Command lines:
  Note: 
  https://github.com/webpack-contrib/uglifyjs-webpack-plugin
 
-5.2
-// If process environment and if we have any reference to NODE_ENV 
-// Only run uglify in the producion
-if ( INPRODUCTION ) {
-    module.exports.plugins.push( new webpack.optimize.UglifyJsPlugin);
-}
+  5.2
+  // If process environment and if we have any reference to NODE_ENV 
+  // Only run uglify in the producion
+  if ( INPRODUCTION ) {
+      module.exports.plugins.push( new webpack.optimize.UglifyJsPlugin);
+  }
+
+6. HTML Plugin
+    This plugin generate an HTML file for you.
+    https://webpack.js.org/plugins/html-webpack-plugin/
+
+  6.1.1 Installl HtmlWebpackPlugin
+        npm install --save-dev html-webpack-plugin
+  6.1.2 Require the package
+        const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+
+
