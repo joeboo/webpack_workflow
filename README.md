@@ -93,6 +93,13 @@ Command lines:
   8.8.1 Install purifycss
         npm i -D purifycss-webpack purify-css
 
+9. Clean for WebPack
+https://github.com/johnagan/clean-webpack-plugin
+
+      9.1.0 Install clean for webpack and follow the link for an intruction
+      npm i clean-webpack-plugin --save-dev
+
+
 
 
 

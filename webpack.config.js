@@ -5,9 +5,28 @@ const UglifyJsPlugin    = require('uglifyjs-webpack-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PurifyCSSPlugin   = require('purifycss-webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const Inproduction = (process.env.NODE_ENV === 'production');
 
+
+
+/** 
+ * Clean directory when compiling
+*/
+// the path(s) that should be cleaned
+let pathsToClean = [
+    'dist',
+    'build'
+];
+
+// the clean options to use
+let cleanOptions = {
+  root:     __dirname,
+  verbose:  true,
+  dry:      false
+};
+  
 // const extractSass = new ExtractTextPlugin({
 //     filename: "[name].[contenthash].css",
 //     disable: process.env.NODE_ENV === "development"
@@ -128,7 +147,12 @@ module.exports = {
         new PurifyCSSPlugin({
             paths: glob.sync(path.join(__dirname, '*.html')),
             minimize: Inproduction
-        })
+        }),
+
+        new CleanWebpackPlugin(pathsToClean, cleanOptions),
+
+
+
 
     ]
 };
@@ -138,7 +162,7 @@ module.exports = {
 if ( Inproduction ) {
     module.exports.plugins.push( 
             new UglifyJsPlugin()
-    )
+    );
 
     // module.exports.plugins.push(
         // new OptimizeCssAssetsPlugin()
