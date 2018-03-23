@@ -1,8 +1,10 @@
 const webpack           = require('webpack');
+const glob              = require('glob');
 const path              = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin    = require('uglifyjs-webpack-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const PurifyCSSPlugin   = require('purifycss-webpack');
 
 const Inproduction = (process.env.NODE_ENV === 'production');
 
@@ -121,7 +123,13 @@ module.exports = {
                     collapseWhitespace: true
                 }
              
+        }),
+
+        new PurifyCSSPlugin({
+            paths: glob.sync(path.join(__dirname, '*.html')),
+            minimize: Inproduction
         })
+
     ]
 };
 
@@ -130,7 +138,6 @@ module.exports = {
 if ( Inproduction ) {
     module.exports.plugins.push( 
             new UglifyJsPlugin()
-
     )
 
     // module.exports.plugins.push(

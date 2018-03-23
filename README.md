@@ -87,6 +87,11 @@ Command lines:
           "dev": "webpack --mode development"  when running on this mode you will be the compiled files in disc directory.
 
 
+8. Strip Unused CSS
+  https://github.com/webpack-contrib/purifycss-webpack
+
+  8.8.1 Install purifycss
+        npm i -D purifycss-webpack purify-css
 
 
 
