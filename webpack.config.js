@@ -1,11 +1,11 @@
-const webpack           = require('webpack');
-const glob              = require('glob');
-const path              = require('path');
-const UglifyJsPlugin    = require('uglifyjs-webpack-plugin')
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const PurifyCSSPlugin   = require('purifycss-webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const webpack            = require('webpack');
+const glob               = require('glob');
+const path               = require('path');
+const UglifyJsPlugin     = require('uglifyjs-webpack-plugin')
+const ExtractTextPlugin  = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin  = require('html-webpack-plugin');
+const PurifyCSSPlugin    = require('purifycss-webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const Inproduction = (process.env.NODE_ENV === 'production');
 
@@ -113,6 +113,14 @@ module.exports = {
                     // use style-loader in development
                     fallback: "style-loader"
                 })
+            },
+
+            // Image loader
+            {
+              test: /\.(jpe?g|png|gif|svg)$/i,
+              use: [
+                'file-loader?name=[hash:12].[ext]&outputPath=images/'
+              ]
             }
 
 
@@ -150,9 +158,6 @@ module.exports = {
         }),
 
         new CleanWebpackPlugin(pathsToClean, cleanOptions),
-
-
-
 
     ]
 };
