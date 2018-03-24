@@ -106,4 +106,17 @@ https://github.com/johnagan/clean-webpack-plugin
             For more information of how to use this plugin. I find it easier to watch the following video:-
                   https://www.youtube.com/watch?v=cDLfpth5a3s&index=11&list=PLkEZWD8wbltnRp6nRR8kv97RbpcUdNawY
 
+11.  Using third party libray
+      11.1.0 Import the plugin
+            e.g In this case we're using jQuery
+                  - import 'jquery';
+
+      11.2.0 Added the following code into your plugin
+            new webpack.ProvidePlugin({
+                  $: 'jquery',
+                  jQuery: 'jquery'
+            })
+
+
+
 

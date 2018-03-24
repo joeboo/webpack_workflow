@@ -154,7 +154,13 @@ module.exports = {
       minimize: Inproduction
     }),
 
-    new CleanWebpackPlugin(pathsToClean, cleanOptions)
+    new CleanWebpackPlugin(pathsToClean, cleanOptions),
+
+    // Using thrid party library
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
 
   ]
 }
