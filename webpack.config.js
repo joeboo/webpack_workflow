@@ -119,7 +119,7 @@ module.exports = {
             {
               test: /\.(jpe?g|png|gif|svg)$/i,
               use: [
-                'file-loader?name=[hash:12].[ext]&outputPath=images/',
+                'file-loader?name=[hash:12].[ext]&outputPath=images/&publicPath=images',
                 'image-webpack-loader'
               ]
             }
