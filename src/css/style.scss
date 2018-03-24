@@ -1,4 +1,6 @@
 
-.container {
-	background: #000;
+body {
+	background: url('../assets/webpack-logo.png') center center no-repeat;
+	border: 1px solid red;
+	background-size: cover;
 }

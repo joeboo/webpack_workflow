@@ -99,7 +99,11 @@ https://github.com/johnagan/clean-webpack-plugin
       9.1.0 Install clean for webpack and follow the link for an intruction
       npm i clean-webpack-plugin --save-dev
 
+10. Image Loader
 
-
+      10.1.0 Install image webpack loader
+            npm install image-webpack-loader --save-dev
+            For more information of how to use this plugin. I find it easier to watch the following video:-
+                  https://www.youtube.com/watch?v=cDLfpth5a3s&index=11&list=PLkEZWD8wbltnRp6nRR8kv97RbpcUdNawY
 
 
