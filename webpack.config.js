@@ -82,6 +82,7 @@ module.exports = {
       }
     }),
 
+    //  This plugin remove unused selectors from CSS
     new PurifyCSSPlugin({
       paths: glob.sync(path.join(__dirname, '*.html')),
       minimize: Inproduction
