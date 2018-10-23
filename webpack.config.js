@@ -1,11 +1,11 @@
 const webpack = require('webpack')
 const glob = require('glob')
 const path = require('path')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin') // minify your JavaScript
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const PurifyCSSPlugin = require('purifycss-webpack')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const PurifyCSSPlugin = require('purifycss-webpack') //  remove unused selectors from your CSS
+const CleanWebpackPlugin = require('clean-webpack-plugin') //A webpack plugin to remove/clean your build folder(s) before building
 
 const Inproduction = (process.env.NODE_ENV === 'production')
 
